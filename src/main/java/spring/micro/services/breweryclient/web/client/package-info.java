@@ -1,0 +1,1 @@
+package spring.micro.services.breweryclient.web.client;
