@@ -36,6 +36,10 @@ public class CustomerClient {
         this.restTemplate.put(apihost + CUSTOMER_PATH_V1 + customerId.toString(), customerDto);
     }
 
+    public void deleteCustomer(UUID customerID) {
+        this.restTemplate.delete(apihost + CUSTOMER_PATH_V1 + customerID.toString());
+    }
+
     public void setApihost(String apihost) {
         this.apihost = apihost;
     }

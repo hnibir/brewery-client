@@ -36,4 +36,9 @@ class CustomerClientTest {
         CustomerDto customerDto = CustomerDto.builder().firstName("Nibir").lastName("Hossain").build();
         this.customerClient.updateCustomer(UUID.randomUUID(), customerDto);
     }
+
+    @Test
+    void testDeleteCustomer() {
+        this.customerClient.deleteCustomer(UUID.randomUUID());
+    }
 }
