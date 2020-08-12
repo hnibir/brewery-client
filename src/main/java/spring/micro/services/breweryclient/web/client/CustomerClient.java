@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import spring.micro.services.breweryclient.web.model.CustomerDto;
 
+import java.net.URI;
 import java.util.UUID;
 
 @Component
@@ -25,6 +26,10 @@ public class CustomerClient {
 
     public CustomerDto getCustomerById(UUID customerId) {
         return this.restTemplate.getForObject(apihost + CUSTOMER_PATH_V1 + customerId, CustomerDto.class);
+    }
+
+    public URI saveNewCustomer(CustomerDto customerDto) {
+        return this.restTemplate.postForLocation(apihost + CUSTOMER_PATH_V1, customerDto);
     }
 
     public void setApihost(String apihost) {
