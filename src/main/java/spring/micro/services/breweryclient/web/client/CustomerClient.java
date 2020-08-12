@@ -32,6 +32,10 @@ public class CustomerClient {
         return this.restTemplate.postForLocation(apihost + CUSTOMER_PATH_V1, customerDto);
     }
 
+    public void updateCustomer(UUID customerId, CustomerDto customerDto) {
+        this.restTemplate.put(apihost + CUSTOMER_PATH_V1 + customerId.toString(), customerDto);
+    }
+
     public void setApihost(String apihost) {
         this.apihost = apihost;
     }

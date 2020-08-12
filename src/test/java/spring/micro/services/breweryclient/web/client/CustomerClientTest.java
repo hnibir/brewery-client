@@ -30,4 +30,10 @@ class CustomerClientTest {
         assertNotNull(uri);
         log.info(uri.toString());
     }
+
+    @Test
+    void testUpdateCustomer() {
+        CustomerDto customerDto = CustomerDto.builder().firstName("Nibir").lastName("Hossain").build();
+        this.customerClient.updateCustomer(UUID.randomUUID(), customerDto);
+    }
 }
