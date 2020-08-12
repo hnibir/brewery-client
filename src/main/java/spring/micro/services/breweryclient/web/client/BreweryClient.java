@@ -38,6 +38,10 @@ public class BreweryClient {
         this.restTemplate.put(apihost + BEER_PATH_V1 + beerId.toString(), beerDto);
     }
 
+    public void deleteBeer(UUID beerId) {
+        this.restTemplate.delete(apihost + BEER_PATH_V1 + beerId); // Java compiler will automatically add the toString method
+    }
+
     public void setApihost(String apihost) {
         this.apihost = apihost;
     }
