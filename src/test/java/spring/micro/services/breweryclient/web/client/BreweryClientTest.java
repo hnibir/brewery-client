@@ -19,14 +19,14 @@ class BreweryClientTest {
     BreweryClient breweryClient;
 
     @Test
-    void getBeerById() {
+    void testGetBeerById() {
         BeerDto beerDto = breweryClient.getBeerById(UUID.randomUUID());
 
         assertNotNull(beerDto);
     }
 
     @Test
-    void saveNewBeer() {
+    void testSaveNewBeer() {
         // given
         BeerDto beerDto = BeerDto.builder().name("Pilsner").build();
 
@@ -34,4 +34,12 @@ class BreweryClientTest {
         assertNotNull(uri);
         log.info(uri.toString());
     }
+
+    @Test
+    void testUpdateBeer() {
+        // given
+        BeerDto beerDto = BeerDto.builder().name("Pilsner").build();
+        breweryClient.updateBeer(UUID.randomUUID(), beerDto);
+    }
+
 }
